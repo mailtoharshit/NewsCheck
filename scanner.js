@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 /*
 * Copyright (c) 2015.
 * Author- Harshit Pandey
@@ -15,7 +13,6 @@ function injscript() {
 }
 
 //Hold temp data for third iteration
->>>>>>> 03d40ec42722efc4b05b25a8e80b3ff6af65cc01
 var dataArray  = [];
 
 //Method to make Ajax call and push data into array
@@ -23,15 +20,10 @@ function times(){
 var timesAPI = "http://timesofindia.indiatimes.com/feeds/newsfeed/-2128936835.cms?feedtype=json";
 $.getJSON( timesAPI, {})
   .done(function( data ) 
-<<<<<<< HEAD
-  {$.each(data['NewsItem'], function(key, value) {
-       if (value.Story.div.div['#text']) dataArray.push({url: value.WebURL, text: value.Story.div.div['#text'].join('')});  //push third level nested value
-=======
   {$.each(data, function(key, value) {
        $.each(value, function(key, value){
        dataArray.push(value);  //push third level nested value
   });
->>>>>>> 03d40ec42722efc4b05b25a8e80b3ff6af65cc01
 })});}
 
 //Jscript doesnt hold and wait for context to finish, hence in chrome console run this command individually to test
@@ -50,3 +42,5 @@ function scan(data){
           console.log(key + ": " + value);
       });
   }); }
+
+
