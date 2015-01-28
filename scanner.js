@@ -14,14 +14,3 @@ $.getJSON( timesAPI, {})
 times();
 //print array
 dataArray;
-
-//clean up array - last part under contrustion, once this work, I can parse through url and dump on a page.
-for (i = 0; i < 4; i++) {dataArray.shift();}
-var stories = [];
-function scan(data){ 
-  $.each(data, function(idx, obj){ 
-      $.each(obj, function(key, value){ 
-          if(key.toString().toLowerCase() ==="story")
-          console.log(key + ": " + value);
-      });
-  }); }
