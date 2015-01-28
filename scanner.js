@@ -5,6 +5,12 @@
 *Endpoint URL - http://timesofindia.indiatimes.com/feeds/newsfeed/-2128936835.cms?feedtype=sjson
 */
 
+function injscript() {
+    var script = document.createElement("script");
+    script.src = "//code.jquery.com/jquery-2.1.3.min.js";
+    script.onload = script.onreadystatechange = function(){ /* your callback here */ };
+    document.body.appendChild( script );
+}
 
 //Hold temp data for third iteration
 var dataArray  = [];
