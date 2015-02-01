@@ -12,9 +12,9 @@ import urllib2
 # Need a better mechanism for importing the txt files, perhaps host them online and import from url, will decide.
 try:
 	newsfeed  = urllib2.urlopen('http://timesofindia.indiatimes.com/feeds/newsfeed/-2128936835.cms?feedtype=sjson')
-	positiveWords = open('/Users/udaysharma/Documents/NewsCheck/data/positive-words.txt', 'r')
-	negativeWords = open('/Users/udaysharma/Documents/NewsCheck/data/negative-words.txt', 'r')
-	profaneWords = open('/Users/udaysharma/Documents/NewsCheck/data/profane-words.txt', 'r')
+	positiveWords = open('positive-words.txt', 'r')
+	negativeWords = open('negative-words.txt', 'r')
+	profaneWords = open('profane-words.txt', 'r')
 	
 except: 
 	print "No Data Found"
@@ -69,6 +69,7 @@ def analyseSentances(storyText):
 	sentences = re.split("(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?)\s", storyText)
 	for sent in sentences:
 		wordList = sent.split()
+		print wordList
 		#printing for sake of showing the prgram output
 		print sent
 		# yet to write logic for classifying the sentance
